@@ -1,7 +1,7 @@
 {
-  "name": "es6-6to5-browserify-boilerplate",
+  "name": "TNM084-lab-3",
   "version": "0.0.0",
-  "description": "A repo to play with ES6++",
+  "description": "TNM084",
   "homepage": "https://github.com/thoughtram/es6-6to5-browserify-boilerplate",
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
     "vinyl-source-stream": "^1.0.0",
     "watchify": "^2.1.1"
   },
-  "author": "Christoph Burgdorf <christoph@thoughtram.io>",
+  "author": "Filip Kantedal",
   "license": "MIT",
   "dependencies": {
     "fs": "0.0.1-security",

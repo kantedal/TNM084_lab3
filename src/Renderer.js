@@ -116,8 +116,6 @@ export class Renderer {
   }
 
   addSceneTextures(triangleArray) {
-    console.log("Create triangle texture");
-
     this.allocateTexture();
     let width = 1024;
     let height = 1024;
@@ -131,10 +129,9 @@ export class Renderer {
     LoadShaders([
       './dist/kernels/header.glsl',
       './dist/kernels/cellular3D.glsl',
-      //'./dist/kernels/noise2D.glsl',
+      './dist/kernels/noise3D.glsl',
       './dist/kernels/main.glsl'
     ], (kernelData) => {
-        console.log(kernelData);
         this.fragment_shader = kernelData;
         this.vertex_shader = document.getElementById('vs').textContent;
     		this.canvas = document.querySelector('canvas');
@@ -185,6 +182,21 @@ export class Renderer {
 		gl.deleteShader( fs );
 
 		gl.linkProgram( program );
+
+    var log = gl.getProgramInfoLog(program);
+    if (log) {
+      console.log(log);
+    }
+
+    log = gl.getShaderInfoLog(vs);
+    if (log) {
+      console.log(log);
+    }
+
+    log = gl.getShaderInfoLog(fs);
+    if (log) {
+      console.log(log);
+    }
 
 		if ( !gl.getProgramParameter( program, gl.LINK_STATUS ) ) {
 			return null;
