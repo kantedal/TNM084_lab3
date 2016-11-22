@@ -7,7 +7,9 @@ void main( void ) {
 
 
     gl_FragColor = vec4(
-      cell.x,cell.y,offset,
+      mix(cell.x, cell.y, mouse_pos.x / resolution.x),
+      mix(cell.y, cell.x, mouse_pos.y / resolution.y),
+      0,
       1.0
     );
 }
